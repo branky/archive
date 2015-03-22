@@ -1,0 +1,10 @@
+Use $location to read and update browser url
+
+https://docs.angularjs.org/api/ng/service/$location
+
+//read
+$location.url();
+
+//write
+$location.url('new_url');
+

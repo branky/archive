@@ -1,0 +1,49 @@
+Supervisor unable to restart
+
+2015-03-17 17:55:38 b.s.event [ERROR] Error when processing event
+java.lang.RuntimeException: java.io.EOFException
+        at backtype.storm.utils.Utils.deserialize(Utils.java:93) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        at backtype.storm.utils.LocalState.snapshot(LocalState.java:45) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        at backtype.storm.utils.LocalState.get(LocalState.java:56) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        at backtype.storm.daemon.supervisor$sync_processes.invoke(supervisor.clj:207) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        at clojure.lang.AFn.applyToHelper(AFn.java:161) [clojure-1.5.1.jar:na]
+        at clojure.lang.AFn.applyTo(AFn.java:151) [clojure-1.5.1.jar:na]
+        at clojure.core$apply.invoke(core.clj:619) ~[clojure-1.5.1.jar:na]
+        at clojure.core$partial$fn__4190.doInvoke(core.clj:2396) ~[clojure-1.5.1.jar:na]
+        at clojure.lang.RestFn.invoke(RestFn.java:397) ~[clojure-1.5.1.jar:na]
+        at backtype.storm.event$event_manager$fn__2378.invoke(event.clj:39) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        at clojure.lang.AFn.run(AFn.java:24) [clojure-1.5.1.jar:na]
+        at java.lang.Thread.run(Thread.java:745) [na:1.7.0_60]
+Caused by: java.io.EOFException: null
+        at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2325) ~[na:1.7.0_60]
+        at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:2794) ~[na:1.7.0_60]
+        at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:801) ~[na:1.7.0_60]
+        at java.io.ObjectInputStream.<init>(ObjectInputStream.java:299) ~[na:1.7.0_60]
+        at backtype.storm.utils.Utils.deserialize(Utils.java:88) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        ... 11 common frames omitted
+2015-03-17 17:55:38 b.s.event [ERROR] Error when processing event
+java.lang.RuntimeException: java.io.EOFException
+        at backtype.storm.utils.Utils.deserialize(Utils.java:93) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        at backtype.storm.utils.LocalState.snapshot(LocalState.java:45) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        at backtype.storm.utils.LocalState.get(LocalState.java:56) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        at backtype.storm.daemon.supervisor$sync_processes.invoke(supervisor.clj:207) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        at clojure.lang.AFn.applyToHelper(AFn.java:161) [clojure-1.5.1.jar:na]
+        at clojure.lang.AFn.applyTo(AFn.java:151) [clojure-1.5.1.jar:na]
+        at clojure.core$apply.invoke(core.clj:619) ~[clojure-1.5.1.jar:na]
+        at clojure.core$partial$fn__4190.doInvoke(core.clj:2396) ~[clojure-1.5.1.jar:na]
+        at clojure.lang.RestFn.invoke(RestFn.java:397) ~[clojure-1.5.1.jar:na]
+        at backtype.storm.event$event_manager$fn__2378.invoke(event.clj:39) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        at clojure.lang.AFn.run(AFn.java:24) [clojure-1.5.1.jar:na]
+        at java.lang.Thread.run(Thread.java:745) [na:1.7.0_60]
+Caused by: java.io.EOFException: null
+        at java.io.ObjectInputStream$PeekInputStream.readFully(ObjectInputStream.java:2325) ~[na:1.7.0_60]
+        at java.io.ObjectInputStream$BlockDataInputStream.readShort(ObjectInputStream.java:2794) ~[na:1.7.0_60]
+        at java.io.ObjectInputStream.readStreamHeader(ObjectInputStream.java:801) ~[na:1.7.0_60]
+        at java.io.ObjectInputStream.<init>(ObjectInputStream.java:299) ~[na:1.7.0_60]
+        at backtype.storm.utils.Utils.deserialize(Utils.java:88) ~[storm-core-0.9.2-incubating.jar:0.9.2-incubating]
+        ... 11 common frames omitted
+2015-03-17 17:55:38 b.s.util [INFO] Halting process: ("Error when processing an event")
+2015-03-17 17:55:38 b.s.util [INFO] Halting process: ("Error when processing an event")
+
+https://issues.apache.org/jira/browse/STORM-307
+
