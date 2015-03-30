@@ -1,0 +1,5 @@
+#select the lines DOESN'T match the pattern
+grep -v 
+#only print the matched portion 
+grep -o
+

@@ -1,0 +1,2 @@
+#use awk to accumulate
+cat sum_1_column.txt | awk '{total = total + $1}END{print total}'
