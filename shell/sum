@@ -1,2 +1,1 @@
-#use awk to accumulate
-cat sum_1_column.txt | awk '{total = total + $1}END{print total}'
+http://localhost:8080/kwsrv/v2/conceptKeywords?limit=35&to=2015-04-07&from=2015-03-01

@@ -1,0 +1,19 @@
+Unable to submit topology:
+
+Caused by: org.apache.thrift7.transport.TTransportException: java.net.SocketException: Connection reset
+	at org.apache.thrift7.transport.TIOStreamTransport.write(TIOStreamTransport.java:147)
+	at org.apache.thrift7.transport.TFramedTransport.flush(TFramedTransport.java:157)
+	at org.apache.thrift7.TServiceClient.sendBase(TServiceClient.java:65)
+	at backtype.storm.generated.Nimbus$Client.send_submitTopology(Nimbus.java:156)
+	at backtype.storm.generated.Nimbus$Client.submitTopology(Nimbus.java:145)
+	at backtype.storm.StormSubmitter.submitTopology(StormSubmitter.java:127)
+	... 2 more
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketOutputStream.socketWrite(SocketOutputStream.java:118)
+	at java.net.SocketOutputStream.write(SocketOutputStream.java:159)
+	at org.apache.thrift7.transport.TIOStreamTransport.write(TIOStreamTransport.java:145)
+	... 7 more
+
+
+This is due to nimbus.thrift.max_buffer_size DEFAULT VALUE 1048576 is too small for large topology (usually have more than 20 bolts).
+Incease it to larger value (>2x). http://qnalist.com/questions/4768442/nimbus-fails-after-uploading-topology-reading-too-large-of-frame-size
