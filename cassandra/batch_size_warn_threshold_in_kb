@@ -1,0 +1,9 @@
+# Log WARN on any batch size exceeding this value. 5kb per batch by default.
+# Caution should be taken on increasing the size of this threshold as it can lead to node instability.
+batch_size_warn_threshold_in_kb: 5
+
+http://grokbase.com/t/cassandra/user/146jam8xn9/batch-of-prepared-statements-exceeding-specified-threshold
+
+https://lostechies.com/ryansvihla/2014/08/28/cassandra-batch-loading-without-the-batch-keyword/
+
+BatchStatement is not intent just to group a bunch of statements and execute together. There's some limitation of the usage.
