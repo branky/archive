@@ -2,4 +2,8 @@
 grep -v 
 #only print the matched portion 
 grep -o
+#include leading and tailing
+grep -A 
+grep -B 
+grep -C # = grep -A -B
 
