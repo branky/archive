@@ -1,0 +1,5 @@
+#format
+date +"%Y-%m-%d %H:00:00"`
+#by describe, human lanuage, awesome!!
+date -d '1 hour ago'
+date -d '2 day ago'
