@@ -1,1 +1,3 @@
-http://localhost:8080/kwsrv/v2/conceptKeywords?limit=35&to=2015-04-07&from=2015-03-01
+#column 5 is the size of file
+#use awk to get the sum of file size under the current folder
+ls -al | awk '{s+=$5}END{print s}'
